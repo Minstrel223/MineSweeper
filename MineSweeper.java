@@ -5,6 +5,7 @@ import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Random;
+import java.util.Scanner;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,24 +13,35 @@ import javax.swing.JOptionPane;
 
 /**
  *扫雷（基于网易云课堂之中一版本的提高版，增加了右键标记的功能，修复了mac0S版代码应用于windows时的bug
+ *增加了自定义功能
  * @author Minstrel
- * @version 2018.1.2
+ * @version 2018.1.3
  */
 
-public class MineSweeper extends JFrame implements MouseListener {
+class MineSweeper extends JFrame implements MouseListener {
 
 	JFrame frame=new JFrame("Minstrel’s 扫雷");
 	JButton reset=new JButton("重来");
 	Container container=new Container();
-	final int row=16;
-	final int col=16;
-	final int mineCount=40;
-	JButton[][] buttons=new JButton[row][col];
-	int[][] counts=new int[row][col];
+	int row;
+	int col;
+	int mineCount;
+	JButton[][] buttons;
+	int[][] counts;
 	final int MINECODE=10;
 	
-	public MineSweeper() {
-		frame.setSize(850,920);
+	public MineSweeper(int row,int col,int mineCount) {
+		this.row=row;
+		this.col=col;
+		this.mineCount=mineCount;
+		this.buttons=new JButton[row][col];
+		this.counts=new int[row][col];
+	}
+
+	void run() {
+		
+		
+		frame.setSize(1000,1000);
 		frame.setResizable(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLayout(new BorderLayout());
@@ -43,7 +55,7 @@ public class MineSweeper extends JFrame implements MouseListener {
 		
 		frame.setVisible(true);
 	}
-
+	
 	void addResetButton() {
 		reset.setBackground(Color.pink);
 		reset.setOpaque(true);
@@ -157,10 +169,7 @@ public class MineSweeper extends JFrame implements MouseListener {
 		JOptionPane.showMessageDialog(frame, "你赢了！");
 	}
 	
-	public static void main(String[] args) {
-
-		MineSweeper boom=new MineSweeper();
-	}
+	
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
