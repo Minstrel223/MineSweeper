@@ -29,26 +29,26 @@ class Js extends JFrame implements ActionListener{
 		
 		JPanel northPanel=new JPanel();
 		northPanel.setLayout(new GridLayout(3,2));
-		northPanel.add(new JLabel("ÇëÊäÈëĞĞÊı            ",SwingConstants.RIGHT));
+		northPanel.add(new JLabel("è¯·è¾“å…¥è¡Œæ•°            ",SwingConstants.RIGHT));
 		northPanel.add(text1);
-		northPanel.add(new JLabel("ÇëÊäÈëÁĞÊı            ", SwingConstants.RIGHT));
+		northPanel.add(new JLabel("è¯·è¾“å…¥åˆ—æ•°            ", SwingConstants.RIGHT));
 		northPanel.add(text2);
-		northPanel.add(new JLabel("ÇëÊäÈëÀ×Êı            ", SwingConstants.RIGHT));
+		northPanel.add(new JLabel("è¯·è¾“å…¥é›·æ•°            ", SwingConstants.RIGHT));
 		northPanel.add(text3);
 		
 		JPanel centerPanel=new JPanel();
 		centerPanel.add(enter);
 		
 		enter.addActionListener(this);
-		enter.setText("È·¶¨");
+		enter.setText("ç¡®å®š");
 		
 		JPanel southPanel=new JPanel();
 		low.addActionListener(this);
 		middle.addActionListener(this);
 		high.addActionListener(this);
-		low.setText("³õ¼¶");
-		middle.setText("ÖĞ¼¶");
-		high.setText("¸ß¼¶");
+		low.setText("åˆçº§");
+		middle.setText("ä¸­çº§");
+		high.setText("é«˜çº§");
 		southPanel.add(low);
 		southPanel.add(middle);
 		southPanel.add(high);

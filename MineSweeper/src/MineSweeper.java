@@ -12,17 +12,17 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
- *É¨À×,Ôö¼ÓÁËÓÒ¼ü±ê¼ÇµÄ¹¦ÄÜ£¬ĞŞ¸´ÁËÈô¸Ébug
- *Ôö¼ÓÁË×Ô¶¨Òå¹¦ÄÜºÍÑ¡¼¶¹¦ÄÜ£¬Ö§³Ö¶à¿ª
- *ÓÅ»¯ÁË´°¿Ú´¦Àí
+ *æ‰«é›·,å¢åŠ äº†å³é”®æ ‡è®°çš„åŠŸèƒ½ï¼Œä¿®å¤äº†è‹¥å¹²bug
+ *å¢åŠ äº†è‡ªå®šä¹‰åŠŸèƒ½å’Œé€‰çº§åŠŸèƒ½ï¼Œæ”¯æŒå¤šå¼€
+ *ä¼˜åŒ–äº†çª—å£å¤„ç†
  * @author Minstrel
  * @version 2018.5.31
  */
 
 class MineSweeper extends JFrame implements MouseListener {
 
-	JFrame frame=new JFrame("Minstrel¡¯s É¨À×");
-	JButton reset=new JButton("ÖØÀ´");
+	JFrame frame=new JFrame("Minstrelâ€™s æ‰«é›·");
+	JButton reset=new JButton("é‡æ¥");
 	Container container=new Container();
 	int row;
 	int col;
@@ -125,7 +125,7 @@ class MineSweeper extends JFrame implements MouseListener {
 			for(int j=0;j<col;j++) {
 				int count=counts[i][j];
 				if(count==MINECODE) {
-					buttons[i][j].setText("À×");
+					buttons[i][j].setText("é›·");
 					buttons[i][j].setBackground(Color.red);
 					buttons[i][j].setOpaque(true);
 					buttons[i][j].setEnabled(false);
@@ -170,7 +170,7 @@ class MineSweeper extends JFrame implements MouseListener {
 				if(buttons[i][j].isEnabled()==true&&counts[i][j]!=MINECODE) return;
 			}
 		}
-		JOptionPane.showMessageDialog(frame, "ÄãÓ®ÁË£¡");
+		JOptionPane.showMessageDialog(frame, "ä½ èµ¢äº†ï¼");
 	}
 		}
 	
@@ -210,13 +210,13 @@ class MineSweeper extends JFrame implements MouseListener {
 			for(int i=0;i<row;i++) {
 				for(int j=0;j<col;j++) {
 					if(button.equals(buttons[i][j])) {
-						if(buttons[i][j].getText()!="Æì"&&buttons[i][j].getText()!="?"&&buttons[i][j].isEnabled()==true) {
-						buttons[i][j].setText("Æì");
+						if(buttons[i][j].getText()!="æ——"&&buttons[i][j].getText()!="?"&&buttons[i][j].isEnabled()==true) {
+						buttons[i][j].setText("æ——");
 						buttons[i][j].setBackground(Color.LIGHT_GRAY);
 						buttons[i][j].setOpaque(true);
 						return;
 						}
-						if(buttons[i][j].getText()=="Æì") {
+						if(buttons[i][j].getText()=="æ——") {
 							buttons[i][j].setText("?");
 							return;
 						}
